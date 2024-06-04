@@ -1,10 +1,8 @@
 from kivy.uix.scrollview import ScrollView
 from kivymd.app import MDApp
-from kivymd.uix.screen import Screen
+from kivymd.uix.screen import MDScreen
 from kivymd.uix.list import MDList, TwoLineListItem
-from kivymd.uix.scrollview import MDScrollView
 from kivymd.uix.textfield import MDTextField
-from kivymd.uix.button import MDIconButton
 from kivymd.uix.label import MDLabel
 
 
@@ -15,11 +13,12 @@ class TodoListApp(MDApp):
         self.theme_cls.primary_palette = "Blue"
         self.theme_cls.theme_style = "Dark"
 
-        self.screen = Screen()
+        self.screen = MDScreen()
         self.screen.add_widget(MDLabel(
             text="To-Do List",
+            font_style='H3',
             size_hint=(1, 0.5),
-            pos_hint={'x': 0.45, 'y': 0.7}
+            pos_hint={'x': 0.35, 'y': 0.7}
         ))
         self.task_input = MDTextField(
             icon_left="plus",
